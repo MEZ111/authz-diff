@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "authz-diff"
+version = "0.1.0"
+description = "Detect authorization regressions between OpenAPI specifications."
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["PyYAML>=6.0"]
+
+[project.scripts]
+authz-diff = "authz_diff:main"
+
+[tool.setuptools]
+py-modules = ["authz_diff"]
+package-dir = {"" = "src"}
