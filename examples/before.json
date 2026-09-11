@@ -1,0 +1,1 @@
+{"openapi":"3.0.3","security":[{"oauth":["read","admin"]}],"components":{"securitySchemes":{"oauth":{"type":"oauth2"}}},"paths":{"/admin/export":{"get":{}},"/status":{"get":{"security":[]}}}}
