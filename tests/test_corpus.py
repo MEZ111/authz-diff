@@ -2,7 +2,6 @@ import unittest
 
 from authz_diff import compare
 
-
 SCHEMES = {
     "oauth": {"type": "oauth2"},
     "apiKey": {"type": "apiKey", "in": "header", "name": "X-API-Key"},
