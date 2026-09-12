@@ -100,7 +100,7 @@ def load_spec(path: Path) -> dict[str, Any]:
         value = json.loads(text)
     else:
         try:
-            import yaml  # type: ignore[import-untyped]
+            import yaml
         except ImportError as exc:  # pragma: no cover
             raise RuntimeError("YAML input requires PyYAML") from exc
         value = yaml.safe_load(text)
