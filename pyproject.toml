@@ -4,11 +4,21 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "authz-diff"
-version = "0.1.0"
+version = "0.2.0"
 description = "Detect authorization regressions between OpenAPI specifications."
+readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 dependencies = ["PyYAML>=6.0"]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "mypy>=1.11",
+  "pip-audit>=2.7",
+  "ruff>=0.6",
+  "types-PyYAML>=6.0",
+]
 
 [project.scripts]
 authz-diff = "authz_diff:main"
@@ -16,3 +26,17 @@ authz-diff = "authz_diff:main"
 [tool.setuptools]
 py-modules = ["authz_diff"]
 package-dir = {"" = "src"}
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.10"
+check_untyped_defs = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
